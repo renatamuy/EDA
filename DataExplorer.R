@@ -7,7 +7,6 @@ devtools::session_info()
 # Install packages
 
 install.packages("DataExplorer")
-install.packages("pandoc")
 install.packages("knitr")
 
 # Check packages
