@@ -1,6 +1,6 @@
 ##########################################################################
-# What´s correlated? #
-
+# What´s correlated? #####################################################
+##########################################################################
 # Renata Muylaert - renatamuy at gmail.com
 
 memory.limit(size = 1.75e13)
@@ -20,7 +20,7 @@ comunidade <- data.frame(x, y, z, h)
 
 colnames(comunidade)
 
-preditores <- c("x", "y", "z","h")
+preditores <- c("x", "y", "z", "h")
 
 # Default is Kendall´s 
 
@@ -30,10 +30,11 @@ M <- cor(comunidade[preditores])
 
 # What is not correlation is signed with a cross, considering 5% significance level
 # Higher the correlation, bigger the square
+# To add correlation value use method = "number" instead
 
 png(file="corr.png", res=300, unit="cm", width= 22, height= 22)
 
-corrplot(M, type = "upper", order = "hclust", method="square",  p.mat = p.mat, sig.level = 0.05, tl.col= "black", col = gray.colors(100))
+corrplot(M, type = "upper", order = "hclust", method= "square",  p.mat = p.mat, sig.level = 0.05, tl.col= "black", col = gray.colors(100))
 
 dev.off()
 
